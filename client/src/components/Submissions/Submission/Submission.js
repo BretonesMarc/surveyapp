@@ -1,6 +1,9 @@
 import React from "react";
 
-const Submission = () => {
+import useStyles from './styles';
+const Submission = () => {   
+     const classes = useStyles();
+
     return (
         <h1>SUBMISSION</h1>
     );

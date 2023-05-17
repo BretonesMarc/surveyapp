@@ -10,11 +10,11 @@ import surveyRoutes from './routes/surveys.js';
 
 const app = express();
 
-app.use('/surveys', surveyRoutes);
-
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
-app.use(cors());
+app.use(cors({ origin: '*'}));
+
+app.use('/surveys', surveyRoutes);
 
 const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT || 5001;
